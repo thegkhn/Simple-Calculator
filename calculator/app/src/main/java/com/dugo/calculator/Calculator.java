@@ -3,7 +3,6 @@ package com.dugo.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -70,12 +69,10 @@ public class Calculator extends AppCompatActivity {
                     operand1 = Float.parseFloat(display.getText().toString());
                     lastOperation = buttonText;
                     isOperationClicked = true;
-                    Log.e("S", operand1 + " " + lastOperation);
 
                 }else{
                     operand2 = Float.parseFloat(display.getText().toString());
                     result = calculate(operand1, operand2, lastOperation);
-                    Log.e("S", operand1 + " " + operand2 + " " + result);
                     display.setText(String.valueOf(result));
                     currentInput = String.valueOf(result);
                 }
@@ -98,7 +95,6 @@ public class Calculator extends AppCompatActivity {
                 if (!lastOperation.isEmpty()) {
                     operand2 = Float.parseFloat(display.getText().toString());
                     result = calculate(operand1, operand2, lastOperation);
-                    Log.e("Hata", operand1 + " " + operand2 + " " + result);
                     display.setText(String.valueOf(result));
                     currentInput = String.valueOf(result);
                     lastOperation = "";
